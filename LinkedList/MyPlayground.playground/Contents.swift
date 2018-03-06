@@ -64,7 +64,7 @@ extension LinkedList {
     
     func deleteFirst(){
         if self.head != nil {
-            if self.head.next != nil {
+            if self.head.next == nil {
                 self.head = nil
             }else {
                 self.head = self.head.next
@@ -114,4 +114,12 @@ extension LinkedList {
         }
     }
 }
+
+var linkedList = LinkedList()
+
+linkedList.insertFirst(value: 5)
+linkedList.insertLast(value: 6)
+linkedList.deleteFirst()
+
+linkedList.getElements()
 
