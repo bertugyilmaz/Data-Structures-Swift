@@ -158,6 +158,7 @@ extension LinkedList {
                 }else {
                     if prevNode != nil {
                         prevNode?.next = tempNode?.next
+                        self.size -= 1
                         break
                     }else {
                         deleteFirst()
@@ -181,6 +182,8 @@ extension LinkedList {
                 id += 1
             }
         }
+        
+        print("\nSize: \(self.size)")
     }
 }
 
@@ -188,7 +191,7 @@ extension LinkedList {
 
     linkedList.insertFirst(value: 5)
     linkedList.insertLast(value: 6)
-//    linkedList.deleteFirst()
+    linkedList.deleteFirst()
     linkedList.insertPosition(position: 0, value: 4)
     linkedList.deletePosition(position: 0)
     linkedList.getElements()
