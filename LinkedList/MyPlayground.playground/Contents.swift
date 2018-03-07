@@ -144,7 +144,30 @@ extension LinkedList {
     }
 
     func deletePosition(position: Int){
-
+        if self.head != nil {
+            var tempNode = self.head
+            var prevNode: Node!
+            var currentPosition: Int = 0
+            
+            while tempNode != nil {
+                if currentPosition != position {
+                    prevNode = tempNode
+                    tempNode = tempNode?.next
+                    
+                    currentPosition += 1
+                }else {
+                    if prevNode != nil {
+                        prevNode?.next = tempNode?.next
+                        break
+                    }else {
+                        deleteFirst()
+                        break
+                    }
+                }
+            }
+        }else {
+            print("Empty list*")
+        }
     }
     
     func getElements(){
@@ -165,8 +188,8 @@ extension LinkedList {
 
     linkedList.insertFirst(value: 5)
     linkedList.insertLast(value: 6)
-    linkedList.deleteFirst()
+//    linkedList.deleteFirst()
     linkedList.insertPosition(position: 0, value: 4)
-
+    linkedList.deletePosition(position: 0)
     linkedList.getElements()
 
