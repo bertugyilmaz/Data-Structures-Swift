@@ -27,21 +27,22 @@ class LinkedList {
 }
 
 extension LinkedList {
+    
     func insertFirst(value: Int){
-        var tempNode = Node(data: value)
+        let newNode = Node(data: value)
         
         if self.head == nil {
-            self.head = tempNode
+            self.head = newNode
         }else {
-            tempNode.next = self.head
-            self.head = tempNode
+            newNode.next = self.head
+            self.head = newNode
         }
         
         self.size += 1
     }
     
     func insertLast(value: Int){
-        var tempNode = Node(data: value)
+        let newNode = Node(data: value)
         
         if self.head == nil {
             self.insertFirst(value: value)
@@ -56,9 +57,47 @@ extension LinkedList {
                 }
             }
             
-            lastNode?.next = tempNode
+            lastNode?.next = newNode
             
             self.size += 1
+        }
+    }
+
+    func insertPosition(position: Int, value: Int){
+        let newNode = Node(data: value)
+        var tempNode = self.head
+        var prevNode: Node!
+        var currentPosition: Int = 0
+        
+        if self.head == nil {
+            insertFirst(value: value)
+            return
+        }
+        
+        if self.size < position + 1 {
+            insertLast(value: value)
+            return
+        }
+        
+        while tempNode != nil {
+            
+            if currentPosition != position {
+                prevNode = tempNode
+                tempNode = tempNode?.next
+          
+                currentPosition += 1
+            }else {
+                if prevNode != nil {
+                    newNode.next = tempNode
+                    prevNode.next = newNode
+                    self.head = prevNode
+                    self.size += 1
+                }else {
+                    insertFirst(value: value)
+                }
+                
+                break
+            }
         }
     }
     
@@ -75,6 +114,7 @@ extension LinkedList {
             print("Empty list*")
         }
     }
+
     
     func deleteLast(){
         if self.head != nil {
@@ -102,24 +142,31 @@ extension LinkedList {
             print("Empty list*")
         }
     }
+
+    func deletePosition(position: Int){
+
+    }
     
     func getElements(){
         var tempNode = self.head
-
+        var id: Int = 0
+        
         while tempNode != nil {
             if let data = tempNode?.data {
-                print("Data: \(data)")
+                print("\(id) - Data: \(data)")
                 tempNode = tempNode?.next
+                id += 1
             }
         }
     }
 }
 
-var linkedList = LinkedList()
+    var linkedList = LinkedList()
 
-linkedList.insertFirst(value: 5)
-linkedList.insertLast(value: 6)
-linkedList.deleteFirst()
+    linkedList.insertFirst(value: 5)
+    linkedList.insertLast(value: 6)
+    linkedList.deleteFirst()
+    linkedList.insertPosition(position: 0, value: 4)
 
-linkedList.getElements()
+    linkedList.getElements()
 
