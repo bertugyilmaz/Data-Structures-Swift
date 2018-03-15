@@ -38,3 +38,59 @@ class Person: NSObject {
     }
 }
 
+protocol Stack {
+    var top: Int! { get set }
+    func push(object: NSObject)
+    func pop() -> NSObject
+    func peek() -> NSObject
+    func isEmpty() -> Bool
+}
+
+class ArrayTypedStack: Stack {
+    private var items: [NSObject]!
+    var top: Int! = -1
+    
+    init(itemsCount: Int){
+        self.items = [NSObject](repeating: NSObject(), count: itemsCount)
+    }
+    
+    func push(object: NSObject) {
+        if top + 1 == items.count {
+            print("Array size full")
+            return
+        }
+        top = top + 1
+        items[top] = object
+    }
+    
+    func pop() -> NSObject {
+        if isEmpty() {
+            print("Array is empty")
+            return NSObject()
+        }
+        
+        var temp = items[top]
+        items[top] = NSObject()
+        top = top - 1
+        
+        return temp
+    }
+    
+    func peek() -> NSObject {
+        if isEmpty() {
+            print("Array is empty")
+            return NSObject()
+        }
+        print(top)
+        return items[top]
+    }
+    
+    func isEmpty() -> Bool {
+        return top == -1 ? true : false
+    }
+}
+
+
+
+
+
