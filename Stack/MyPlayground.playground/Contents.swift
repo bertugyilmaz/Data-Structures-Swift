@@ -81,7 +81,7 @@ class ArrayTypedStack: Stack {
             print("Array is empty")
             return NSObject()
         }
-        print(top)
+
         return items[top]
     }
     
@@ -90,7 +90,33 @@ class ArrayTypedStack: Stack {
     }
 }
 
+var person = Person()
+person.name = "Bertug"
+person.surname = "Yılmaz"
+person.age = "22"
 
+var person2 = Person()
+person2.name = "Bertug2"
+person2.surname = "Yılmaz2"
+person2.age = "222"
 
+var arr = ArrayTypedStack(itemsCount: 4)
 
+arr.push(object: person)
+arr.push(object: person2)
+arr.pop()
 
+print("top index -> \(arr.top!)")
+
+arr.push(object: person)
+arr.push(object: person)
+
+var peek = arr.peek() as! Person
+print("peek      -> \(peek.name!)")
+
+print("isEmpty   -> \(arr.isEmpty())")
+
+arr.push(object: person2)
+
+var peek2 = arr.peek() as! Person
+print("peek2     -> \(peek2.name!)")
