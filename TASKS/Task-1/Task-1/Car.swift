@@ -10,11 +10,14 @@ import Foundation
 import Darwin
 
 class Car: NSObject {
+    private var identifier: Int!
     private var nameStr: String!
     private var randomTime: Int!
+    private var waitingtime: Int!
     
     init(name: String!) {
         super.init()
+        self.identifier = self.random(1000..<2000)
         self.nameStr = name
         self.randomTime = self.random(10..<300)
     }
@@ -31,7 +34,21 @@ class Car: NSObject {
         }
     }
     
-    func random(_ range:Range<Int>) -> Int {
+    var id: Int! {
+        get {
+            return self.identifier
+        }
+    }
+    
+    var waitingTime: Int! {
+        get {
+            return self.waitingtime
+        } set {
+            self.waitingtime = newValue
+        }
+    }
+    
+    private func random(_ range:Range<Int>) -> Int {
         return range.lowerBound + Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound)))
     }
 }
