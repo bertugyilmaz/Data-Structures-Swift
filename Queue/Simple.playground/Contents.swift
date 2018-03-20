@@ -82,7 +82,7 @@ extension SimpleArrayTypedQueue: Queue {
     
     func remove() -> NSObject {
         if isEmpty() {
-            print("Array is empty")
+            print("Array is empty  ")
             return NSObject()
         }
         
