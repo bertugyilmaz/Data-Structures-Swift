@@ -8,3 +8,13 @@
 
 import Foundation
 
+// Temp Data
+let basement = Basement(size: FLOOR_SIZE)
+let groundFloor = GroundFloor(size: FLOOR_SIZE)
+let secondFloor = SecondFloor()
+
+for i in 0..<15 {
+    basement.push(object: Car(name: "basement\(i)"))
+    groundFloor.insert(object: Car(name: "groundFloor\(i)"))
+    secondFloor.insertLast(object: Car(name: "seconFloor\(i)"))
+}
