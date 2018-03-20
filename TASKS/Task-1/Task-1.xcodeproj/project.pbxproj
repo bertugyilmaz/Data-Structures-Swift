@@ -10,7 +10,8 @@
 		41F1083B2060FDCB00B04BC8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F1083A2060FDCB00B04BC8 /* main.swift */; };
 		41F108422060FEC900B04BC8 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F108412060FEC900B04BC8 /* Car.swift */; };
 		41F10844206108C600B04BC8 /* SimpleQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F10843206108C600B04BC8 /* SimpleQueue.swift */; };
-		41F10846206108F100B04BC8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F10845206108F100B04BC8 /* Queue.swift */; };
+		41F1084A20610FDD00B04BC8 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F1084920610FDD00B04BC8 /* PriorityQueue.swift */; };
+		41F1084C20613F7B00B04BC8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F1084B20613F7B00B04BC8 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +31,8 @@
 		41F1083A2060FDCB00B04BC8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		41F108412060FEC900B04BC8 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		41F10843206108C600B04BC8 /* SimpleQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleQueue.swift; sourceTree = "<group>"; };
-		41F10845206108F100B04BC8 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		41F1084920610FDD00B04BC8 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		41F1084B20613F7B00B04BC8 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,8 @@
 				41F1083A2060FDCB00B04BC8 /* main.swift */,
 				41F108412060FEC900B04BC8 /* Car.swift */,
 				41F10843206108C600B04BC8 /* SimpleQueue.swift */,
-				41F10845206108F100B04BC8 /* Queue.swift */,
+				41F1084920610FDD00B04BC8 /* PriorityQueue.swift */,
+				41F1084B20613F7B00B04BC8 /* Queue.swift */,
 			);
 			path = "Task-1";
 			sourceTree = "<group>";
@@ -129,10 +132,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F1084C20613F7B00B04BC8 /* Queue.swift in Sources */,
 				41F10844206108C600B04BC8 /* SimpleQueue.swift in Sources */,
 				41F108422060FEC900B04BC8 /* Car.swift in Sources */,
+				41F1084A20610FDD00B04BC8 /* PriorityQueue.swift in Sources */,
 				41F1083B2060FDCB00B04BC8 /* main.swift in Sources */,
-				41F10846206108F100B04BC8 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
