@@ -81,6 +81,11 @@ extension SimpleArrayTypedQueue: Queue {
     }
     
     func remove() -> NSObject {
+        if isEmpty() {
+            print("Array is empty")
+            return NSObject()
+        }
+        
         var temp = queue[front]
         
         queue[front] = NSObject()
@@ -91,6 +96,11 @@ extension SimpleArrayTypedQueue: Queue {
     }
     
     func peek() -> NSObject {
+        if isEmpty() {
+            print("Array is empty")
+            return NSObject()
+        }
+        
         var temp = queue[front]
         queue[front] = NSObject()
         queue[rear] = temp
