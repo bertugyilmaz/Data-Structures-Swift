@@ -29,6 +29,9 @@ class GroundFloor {
 
 extension GroundFloor: Queue {
     func insert(object: NSObject) {
+        if let car = object as? Car {
+            print("Inserted queue --> \(car.name!)\n-------------------------------------------------------------------------------- ")
+        }
         
         if size == count || rear == -1 {
             print("Queue size full")
@@ -64,12 +67,11 @@ extension GroundFloor: Queue {
         }else {
             front += 1
         }
-
+        
         if let car = temp as? Car {
-            count == 1 ? print("***** LAST CAR *****") : print("\n")
-            print("----------- Ground floor removed data : \(car.name!)\n-----------")
+            print("Ground Floor removed data --> \(car.name!)\n-------------------------------------------------------------------------------- ")
         }
-
+        
         count -= 1
         return temp
     }

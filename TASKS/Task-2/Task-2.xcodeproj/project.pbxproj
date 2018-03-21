@@ -81,7 +81,6 @@
 				41F108602061832300B04BC8 /* Protocols */,
 				41F10873206190B000B04BC8 /* Floors */,
 				41F108592061401100B04BC8 /* main.swift */,
-				41F1086E20618D1000B04BC8 /* Node.swift */,
 				41F108702061903B00B04BC8 /* Helper.swift */,
 				41F108772061938600B04BC8 /* Constant.swift */,
 			);
@@ -111,6 +110,7 @@
 		41F108762061927D00B04BC8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				41F1086E20618D1000B04BC8 /* Node.swift */,
 				41F10874206190C700B04BC8 /* Car.swift */,
 			);
 			path = Models;

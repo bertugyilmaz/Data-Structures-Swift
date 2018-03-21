@@ -36,7 +36,7 @@ class Basement: Stack {
         top = top - 1
         
         let car = temp as! Car
-        print("Basement removed data : \(car.name!)\n-----------")
+        print("Basement Floor removed data --> \(car.name!)\n-------------------------------------------------------------------------------- ")
         return temp
     }
     

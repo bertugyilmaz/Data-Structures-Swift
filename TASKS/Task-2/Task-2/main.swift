@@ -8,17 +8,19 @@
 
 import Foundation
 
+let programStart = Date()
 // Temp Data
 let basement = Basement(size: FLOOR_SIZE)
 let groundFloor = GroundFloor(size: FLOOR_SIZE)
 let secondFloor = SecondFloor()
 
+print("############TEMP DATA ")
 for i in 0..<15 {
     basement.push(object: Car(name: "basement\(i)"))
     groundFloor.insert(object: Car(name: "groundFloor\(i)"))
     secondFloor.insertLast(object: Car(name: "secondFloor\(i)"))
 }
-
+print("############TEMP DATA ")
 
 while true {
     
@@ -39,6 +41,10 @@ while true {
     }
 }
 
+let programFinish = Date()
+let executionTime = programFinish.timeIntervalSince(programStart)
+print("\n\nExecution time: \(executionTime)")
+print("\nIt solved in 5 minutes \(executionTime*5)\n")
 
 
 

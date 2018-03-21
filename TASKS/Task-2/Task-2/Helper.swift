@@ -31,3 +31,5 @@ func findMyJosephus(n: Int)-> Int {
 func random(_ range:Range<Int>) -> Int {
     return range.lowerBound + Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound)))
 }
+
+

@@ -36,7 +36,7 @@ extension SecondFloor: CircularLinkedList {
     
     func insertLast(object: NSObject) {
         let newNode = Node(data: object)
-       
+
         if self.head == nil {
             self.insertFirst(value: object)
         }else {
@@ -78,7 +78,7 @@ extension SecondFloor: CircularLinkedList {
                         self.size -= 1
                         
                         let car = returnData as! Car
-                        print("----------------------  Second floor removed data : \(car.name!)\n-----------")
+                        print("Second Floor removed data --> \(car.name!)\n-------------------------------------------------------------------------------- ")
                         return returnData
                     }else {
                         return deleteFirst()
@@ -112,5 +112,4 @@ extension SecondFloor: CircularLinkedList {
     func isEmpty() -> Bool {
         return size == 0 ? true : false
     }
-    
 }
