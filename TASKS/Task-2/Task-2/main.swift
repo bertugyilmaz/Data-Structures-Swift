@@ -18,3 +18,26 @@ for i in 0..<15 {
     groundFloor.insert(object: Car(name: "groundFloor\(i)"))
     secondFloor.insertLast(object: Car(name: "seconFloor\(i)"))
 }
+
+
+while true {
+    
+    if basement.isEmpty() && groundFloor.isEmpty() {
+        print("Ended")
+        break
+    }
+    
+    if random(1..<3) == 1 {
+        if !basement.isEmpty() {
+            secondFloor.insertLast(object: basement.pop())
+        }
+    }else {
+        if !groundFloor.isEmpty() {
+            secondFloor.insertLast(object: groundFloor.remove())
+        }
+    }
+}
+
+
+
+
