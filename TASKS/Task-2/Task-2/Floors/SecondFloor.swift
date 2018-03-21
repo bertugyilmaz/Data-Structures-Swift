@@ -36,7 +36,7 @@ extension SecondFloor: CircularLinkedList {
     
     func insertLast(object: NSObject) {
         let newNode = Node(data: object)
-        
+       
         if self.head == nil {
             self.insertFirst(value: object)
         }else {
@@ -56,38 +56,45 @@ extension SecondFloor: CircularLinkedList {
         }
     }
     
-    func removeWithJosephus() {
+    func removeWithJosephus() -> NSObject {
         let position: Int = findMyJosephus(n: size)
         
         if head != nil {
             var tempNode = self.head
             var prevNode: Node!
             var currentPosition: Int = 0
+            let returnData: NSObject!
             
             while tempNode != nil {
-                if currentPosition != position {
+                if currentPosition != position - 1{
                     prevNode = tempNode
                     tempNode = tempNode?.next
                     
                     currentPosition += 1
                 }else {
                     if prevNode != nil {
+                        returnData = tempNode?.data
                         prevNode?.next = tempNode?.next
                         self.size -= 1
-                        break
+                        
+                        let car = returnData as! Car
+                        print("----------------------  Second floor removed data : \(car.name!)\n-----------")
+                        return returnData
                     }else {
-                        deleteFirst()
-                        break
+                        return deleteFirst()
                     }
                 }
             }
         }else {
             print("Empty list*")
+            return NSObject()
         }
+        return NSObject()
     }
     
-    func deleteFirst(){
+    func deleteFirst() -> NSObject{
         if self.head != nil {
+            let temp = head
             if self.head.next == nil {
                 self.head = nil
             }else {
@@ -95,14 +102,15 @@ extension SecondFloor: CircularLinkedList {
             }
             
             self.size -= 1
+            return (temp?.data)!
         }else {
             print("Empty list*")
+            return NSObject()
         }
     }
     
     func isEmpty() -> Bool {
         return size == 0 ? true : false
     }
-    
     
 }
