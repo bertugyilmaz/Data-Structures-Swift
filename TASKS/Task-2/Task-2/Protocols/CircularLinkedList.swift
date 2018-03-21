@@ -11,6 +11,7 @@ import Foundation
 protocol CircularLinkedList {
     func insertLast(object: NSObject)
     func insertFirst(value: NSObject)
-    func removeWithJosephus()
+    func deleteFirst() -> NSObject
+    func removeWithJosephus() -> NSObject
     func isEmpty() -> Bool
 }

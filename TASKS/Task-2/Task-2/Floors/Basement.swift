@@ -35,6 +35,8 @@ class Basement: Stack {
         items[top] = NSObject()
         top = top - 1
         
+        let car = temp as! Car
+        print("Basement removed data : \(car.name!)\n-----------")
         return temp
     }
     

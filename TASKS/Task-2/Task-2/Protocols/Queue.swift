@@ -11,6 +11,5 @@ import Foundation
 protocol Queue {
     func insert(object: NSObject)
     func remove()->NSObject
-    func peek()->NSObject
     func isEmpty()->Bool
 }

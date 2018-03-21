@@ -16,7 +16,7 @@ let secondFloor = SecondFloor()
 for i in 0..<15 {
     basement.push(object: Car(name: "basement\(i)"))
     groundFloor.insert(object: Car(name: "groundFloor\(i)"))
-    secondFloor.insertLast(object: Car(name: "seconFloor\(i)"))
+    secondFloor.insertLast(object: Car(name: "secondFloor\(i)"))
 }
 
 
@@ -27,13 +27,14 @@ while true {
         break
     }
     
-    if random(1..<3) == 1 {
-        if !basement.isEmpty() {
-            secondFloor.insertLast(object: basement.pop())
-        }
+    groundFloor.remove()
+   
+    if random(1..<3) == 2 && !basement.isEmpty() {
+        groundFloor.insert(object: basement.pop())
     }else {
-        if !groundFloor.isEmpty() {
-            secondFloor.insertLast(object: groundFloor.remove())
+        if !secondFloor.isEmpty() {
+            groundFloor.insert(object: secondFloor.removeWithJosephus())
+            
         }
     }
 }
