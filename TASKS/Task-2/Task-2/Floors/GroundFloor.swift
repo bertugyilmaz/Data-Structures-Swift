@@ -39,7 +39,13 @@ extension GroundFloor: Queue {
             front = 0
         }
         
-        queue[rear] = object
+        if (rear == size - 1){
+            rear = 0;
+            queue[rear] = object
+        }else {
+            queue[rear] = object
+        }
+        
         rear += 1
         count += 1
     }
@@ -51,30 +57,28 @@ extension GroundFloor: Queue {
         }
         
         let temp = queue[front]
-        
         queue[front] = NSObject()
-        front += 1
-        count -= 1
         
-        return temp
-    }
-    
-    func peek() -> NSObject {
-        if isEmpty() {
-            print("Array is empty")
-            return NSObject()
+        if front == size - 1 {
+            front = 0;
+        }else {
+            front += 1
         }
-        
-        let temp = queue[front]
-        queue[front] = NSObject()
-        queue[rear] = temp
-        rear += 1
-        front += 1
-        
+
+        if let car = temp as? Car {
+            count == 1 ? print("***** LAST CAR *****") : print("\n")
+            print("----------- Ground floor removed data : \(car.name!)\n-----------")
+        }
+
+        count -= 1
         return temp
     }
     
     func isEmpty() -> Bool {
         return count == 0 ? true : false
+    }
+    
+    func isFull() -> Bool {
+        return size == count ? true : false
     }
 }
