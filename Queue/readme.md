@@ -17,7 +17,7 @@ In approach [B] there is no such overhead, but whenever we move head one positio
 
 <image src="https://user-images.githubusercontent.com/23179810/38057693-e664c5a8-32e8-11e8-9feb-ea2ab0c04ac9.gif"/>
 
-# Types of Linked List
+# Types of Queue
 * Simple typed queue
 * Circular typed queue
 * Priority queue
@@ -30,3 +30,9 @@ In approach [B] there is no such overhead, but whenever we move head one positio
 * peek( ) function is oftenly used to return the value of first element without dequeuing it.
 
 
+# Complexity Analysis of Queue Operations
+Just like Stack, in case of a Queue too, we know exactly, on which position new element will be added and from where an element will be removed, hence both these operations requires a single step.
+
+* insert: O(1)
+* remove: O(1)
+* size: O(1)
