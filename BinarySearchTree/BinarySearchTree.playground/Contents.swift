@@ -35,4 +35,26 @@ class BinarySearchTree {
             return search(root: root.right, key: key)
         }
     }
+    
+    func getMinValue() -> Int! {
+        if root == nil { return nil }
+        
+        var temp: Node = root
+        
+        while temp.left != nil {
+            temp = temp.left
+        }
+        return temp.value
+    }
+    
+    func getMaxValue() -> Int! {
+        if root == nil { return nil }
+        
+        var temp: Node = root
+        
+        while temp.right != nil {
+            temp = temp.right
+        }
+        return temp.value
+    }
 }
