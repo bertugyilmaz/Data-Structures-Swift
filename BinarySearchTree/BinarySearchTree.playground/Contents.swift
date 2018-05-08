@@ -36,10 +36,10 @@ class BinarySearchTree {
         }
     }
     
-    func getMinValue() -> Int! {
-        if root == nil { return nil }
+    func getMinValue(node: Node) -> Int! {
+        if node == nil { return nil }
         
-        var temp: Node = root
+        var temp: Node = node
         
         while temp.left != nil {
             temp = temp.left
@@ -55,6 +55,35 @@ class BinarySearchTree {
         while temp.right != nil {
             temp = temp.right
         }
+        
         return temp.value
     }
+    
+    func insert(value: Int) {
+        var tempParent: Node!
+        var temp: Node = root
+        
+        while temp != nil {
+            tempParent = temp
+            
+            if value == temp.value {
+                return
+            }else if value < temp.value {
+                temp = temp.left
+            }else if value > temp.value {
+                temp = temp.right
+            }
+        }
+        
+        var newNode: Node = Node(value: value)
+        
+        if root == nil {
+            root = newNode
+        }else if value < tempParent.value {
+            tempParent.left = newNode
+        }else if value > tempParent.value {
+            tempParent.right = newNode
+        }
+    }
+    
 }
