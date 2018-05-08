@@ -18,4 +18,21 @@ class BinarySearchTree {
     init() {
         root = nil
     }
+    
+    func search(key: Int) -> Node! {
+        return search(root: self.root, key: key)
+    }
+    
+    private func search(root: Node!, key: Int) -> Node! {
+        
+        if root == nil { return nil }
+        
+        if root.value == key {
+            return root
+        }else if root.value > key {
+            return search(root: root.left, key: key)
+        }else {
+            return search(root: root.right, key: key)
+        }
+    }
 }
