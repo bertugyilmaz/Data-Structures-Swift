@@ -12,6 +12,12 @@ class Node {
     }
 }
 
+extension Node: Equatable {
+    static func == (lhs: Node, rhs: Node) -> Bool {
+        return lhs.left == rhs.left && lhs.right == rhs.right && (lhs.value != nil) && (rhs.value != nil)
+    }
+}
+
 class BinarySearchTree {
     var root: Node!
     
