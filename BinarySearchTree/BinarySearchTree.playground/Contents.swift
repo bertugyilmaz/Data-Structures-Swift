@@ -112,4 +112,63 @@ class BinarySearchTree {
         }
     }
     
+    func remove(value: Int) -> Bool{
+        var tempParent: Node!
+        var temp: Node! = root
+        
+        var isLeft: Bool = true
+        
+        while temp.value != value {
+            tempParent = temp
+            if value < temp.value {
+                isLeft = true
+                temp = temp.left
+            }else {
+                isLeft = false
+                temp = temp.right
+            }
+            
+            if temp == nil {
+                return false
+            }
+        }
+        
+        if temp.left == nil && temp.right == nil {
+            if temp == root {
+                root = nil
+            }else if isLeft {
+                tempParent.left = nil
+            }else {
+                tempParent.right = nil
+            }
+        }else if temp.right == nil {
+            if temp == root {
+                root = temp.left
+            }else if isLeft {
+                tempParent.left = temp.left
+            }else {
+                tempParent.right = temp.left
+            }
+        }else if temp.left == nil {
+            if temp == root {
+                root = temp.right
+            }else if isLeft {
+                tempParent.left = temp.right
+            }else {
+                tempParent.right = temp.right
+            }
+        }else {
+            let successor: Node = self.successor(node: temp)
+            if temp == root {
+                root = successor
+            }else if isLeft {
+                tempParent.left = successor
+            }else {
+                tempParent.right = successor
+            }
+            
+            successor.left = temp.left
+        }
+        return true
+    }
 }
